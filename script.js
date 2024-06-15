@@ -7,23 +7,26 @@ let buttonElement = document.querySelector('#app button');
 
 let todos = JSON.parse(localStorage.getItem('@todoApp')) || [];
 
+// Função para renderizar as tarefas/ Function to render tasks
 function renderTasks(){
     listElement.innerHTML = '';
 
-
+    
     todos.map((todo) => {
         let liElement = document.createElement('li');
         let textElement = document.createTextNode(todo);
-        let linkElement = document.createElement('a');
-        let linkText = document.createTextNode('Excluir');
+        let deleteElement = document.createElement('a');
+        let deleteText = document.createTextNode('❌');
 
         let position = todos.indexOf(todo);
-        
-        linkElement.setAttribute('href', '#');
-        linkElement.setAttribute('onclick', `deleteTodo(${position})`);
-        linkElement.appendChild(linkText);
+
+        deleteElement.setAttribute('href', '#');
+        deleteElement.setAttribute('onclick', `deleteTodo(${position})`);
+        deleteElement.appendChild(deleteText);
+
+
         liElement.appendChild(textElement);
-        liElement.appendChild(linkElement);
+        liElement.appendChild(deleteElement);
         listElement.appendChild(liElement);
     })
 }
@@ -47,6 +50,7 @@ function addTodo(){
 }
 
 
+
 // Função para deletar tarefas/ Function to delete tasks
 function deleteTodo(position){
     todos.splice(position, 1);
@@ -59,6 +63,10 @@ function saveToStorage(){
 }
 
 
-
+inputElement.addEventListener('keyup',function(e){
+    if(e.keyCode === 13){
+        addTodo();
+    }
+})
 buttonElement.onclick = addTodo;
 renderTasks();
