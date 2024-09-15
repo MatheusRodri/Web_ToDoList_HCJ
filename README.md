@@ -13,10 +13,10 @@ Projeto simples de lista de tarefas, salvando no navegador do usuário.
 
 ### Histórico de versões  
 
-V1: Principais funções funcionando (Adicionar, remover e salvar no storage do navegador).
-V2: Estilização da página. 
+- V1: Principais funções funcionando (Adicionar, remover e salvar no storage do navegador).
+- V2: Estilização da página. 
 
 
 ### Aviso
 
-Tem alguma sugestão ? Me envie um mensagem no linkedIn. 
+Tem alguma sugestão ? Me envie uma mensagem no linkedIn. 
